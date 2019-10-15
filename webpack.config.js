@@ -18,19 +18,22 @@ module.exports = (env) => {
                 test: /\.js$/,
                 exclude: /node_modules/
             }, {
-                test: /\.s?css$/, // biar bisa support scss dan css
+                // biar bisa support scss dan css
+                test: /\.s?css$/,
                 // use sama dgn loader, tp dia bisa make banyak loader
                 use : CSSExtract.extract({
                     use: [ 
                         {
                             loader : 'css-loader',
                             options : {
+                                // fungsinya buat nyari source dari file cssnya
                                 sourceMap : true
                             }
                         },
                         {
                             loader : 'sass-loader',
                             options : {
+                                // fungsinya buat nyari source dari file sassnya
                                 sourceMap: true
                             }
                         }
